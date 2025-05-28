@@ -13,8 +13,8 @@ import numpy as np
 import pickle
 from sklearn.datasets import load_iris
 
-st.tittle ("Hello World!")
-
+st.set_page_config(page_tittle="Iris Dashboard App", layout ="centered")
+st.sidebar.header("Dashboard")
 
 # Load model
 with open("model.pkl", "rb") as f:
@@ -68,9 +68,9 @@ elif page == "Prediction":
 
 # --- Page 3: About Naive Bayes ---
 elif page == "About Naive Bayes":
-    st.title("📘 About Naive Bayes Classifier")
-    st.markdown("""
-    Naive Bayes is a *probabilistic classifier* based on *Bayes' theorem*, with an assumption of independence between features.
+    st.title("📚 About Naive Bayes Classifier")
+    st.write("""
+    Naive Bayes is a classification algorithm based on Bayes’ Theorem with an assumption of independence among predictors.
 
     #### Why use it?
     - Simple and fast
@@ -86,12 +86,12 @@ elif page == "About Naive Bayes":
 
     #### Assumption:
     Features are *conditionally independent* given the class.
+
+    ---
+
+    #### Example to save a model:
+    ```python
+    import pickle
+    pickle.dump(your_model, open("model.pkl", "wb"))
+    ```
     """)
-
----
-
-### 🧠 Notes
-- Save your model as model.pkl using:
-  ```python
-  import pickle
-  pickle.dump(your_model, open("model.pkl", "wb"))
